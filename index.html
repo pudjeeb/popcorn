@@ -2,20 +2,23 @@
 <html lang="en">
 
   <head>
+  	<title>Little Succulent | a design-development studio</title>
+
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- stylesheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,400i,700,700i" rel="stylesheet">
+
   </head>
 
   <body>
   	<div class="container-fluid">
   		<div class="container">
 	  		<h1>hello, world!</h1>
-	    	<h3>we are team popcorn!! want to collaborate? say hi? <a href="#contact-form">contact us</a> below :D</h3>
+	    	<h3>we are little succulent!! want to collaborate? say hi? <a href="#contact-form">contact us</a> below :D</h3>
 	    	<br>
 	    	<br>
 	    	<p>this is getting long</p>
@@ -35,34 +38,53 @@
 	    	<br>
 	    	<br>
 	    	<br>
-	    	<hr>
 	    </div>
+	  </div>
 
-	    <!-- contact -->
+	  <!-- contact -->
+    <div class="container-fluid contact">
     	<form id="contact-form" class="container">
-			  <div class="form-row">
-			  	<div class="form-group col-md-6">
-			  		<label for="contact-form--input-name">Name</label>
-			    	<input type="text" class="form-control" id="contact-form--input-name" placeholder="Your full name">
-			  	</div>
-			  	<div class="form-group col-md-6">
-				    <label for="contact-form--input-email">Email</label>
-				    <input type="email" class="form-control" id="contact-form--input-email" placeholder="Your email address">
-				 	</div>
+    		<div class="row">
+    			<div class="col"></div>
+    			<div class="col-md-6">
+    				<label for="contact-form--input-name">Name:</label>
+		    		<input type="text" id="contact-form--input-name" placeholder="Your full name">
+    			</div>
+    			<div class="col"></div>
 			  </div>
-			  <div class="form-row">
-			  	<div class="form-group col-md-12">
-				    <label for="contact-form--texarea-message">Message</label>
-				    <textarea class="form-control" id="contact-form--texarea-message" rows="3" placeholder="Your message goes here..."></textarea>
+			  <div class="row">
+			  	<div class="col"></div>
+			  	<div class="col-md-6">
+				    <label for="contact-form--input-email">Email:</label>
+				    <input type="email" id="contact-form--input-email" placeholder="Your email address">
 				  </div>
-			  </div>
-			  <button type="submit" class="btn btn-primary">Send</button>
-			</form>
-			
+				  <div class="col"></div>
+				</div>
+				<div class="row">
+					<div class="col"></div>
+			  	<div class="col-md-6">
+				    <label for="contact-form--texarea-message">Message:</label>
+				    <textarea id="contact-form--texarea-message" rows="3" placeholder="Your message goes here..."></textarea>
+				  </div>
+				  <div class="col"></div>
+				</div>
+				<div class="row">
+					<div class="col"></div>
+			  	<div class="col-md-6">
+				    <button type="submit" class="button primary">Send</button>
+				  </div>
+				  <div class="col"></div>
+				</div>
+
+    	</form>
+
+    </div>
+    	
+		
 			<!-- footer -->
+		<div class="container-fluid">
     	<footer class="container">
-	    	<hr>
-	    	<p>made with &#9829; by pj & michael. &copy;	2017, all rights reserved.</p>
+	    	<span>made with &#9829; by pj & michael. &copy;	2017, all rights reserved.</span>
 	    </footer>
   	</div>
 
