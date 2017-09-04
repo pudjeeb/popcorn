@@ -32,6 +32,7 @@ def index():
 @app.route("/contactus", methods=["POST"])
 def contact_us():
     if request.method == "POST":
+        print(request.form)
         return email_us(request.form['name'], request.form['email'], request.form['message'])
     return redirect(url_for('index')) 
     
