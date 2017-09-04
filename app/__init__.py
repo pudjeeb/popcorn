@@ -1,30 +1,38 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort, send_from_directory
-from flask_mail import Mail
+from flask import Flask, flash, redirect, render_template, request, session, abort, send_from_directory, url_for
+from flask_mail import Mail, Message
 from app.config import configure_app
 import os
 
 app = Flask(__name__, 
-    static_url_path='', 
     instance_path=os.path.join(os.path.dirname(os.path.realpath(__file__)),'instance'),
-    instance_relative_config=True)
+    instance_relative_config=True,
+    template_folder='templates')
 
-mail = Mail(app)
 configure_app(app)
+mail = Mail(app)
 
-def email_us():
-    msg = Message("Hello",
-                 recipients=["littlesucculentstudio@gmail.com"],
-                 body="hello")
-    mail.send(msg)
+def email_us(name, email, message):
+    try:
+        msg = Message("New Form Submitted from ({},{})".format(name, email),
+                     recipients=["littlesucculentstudio@gmail.com"],
+                     body="""{} has submitted a contact form: 
+                            Name: {}
+                            Email: {}
+                            Message: {}
+                            """.format(name, name, email, message))
+        mail.send(msg)
+        return "Mail Sent!"
+    except Exception as e:
+        return str(e)
 
 @app.route("/")
 def index():
-    return send_from_directory('', "index.html")
+    return render_template("index.html")
 
-@app.route("/contactus/", methods=["POST"])
+@app.route("/contactus", methods=["POST"])
 def contact_us():
     if request.method == "POST":
-        email_us()
+        return email_us(request.form['name'], request.form['email'], request.form['message'])
     return redirect(url_for('index')) 
     
 if __name__ == "__main__":
