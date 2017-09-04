@@ -44,14 +44,14 @@ input, textarea {
 	font-size: 1rem;
 	color: #fff;
 	font-weight: 300;
-	border-bottom: 1px solid rgba(255,255,255,0.3);
+	border-bottom: 2px solid rgba(255,255,255,0.3);
 	transition: ease 0.25s;
 }
 
 
 input:focus, textarea:focus {
 	outline: none;
-	border-bottom: 1px solid #rgba(255,255,255,1);
+	border-bottom: 2px solid rgba(255,255,255,1);
 }
 
 ::-webkit-input-placeholder {
